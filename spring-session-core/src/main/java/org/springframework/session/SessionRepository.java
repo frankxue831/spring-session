@@ -26,9 +26,7 @@ package org.springframework.session;
 public interface SessionRepository<S extends Session> {
 
 	/**
-	 * Creates a new {@link Session} that is capable of being persisted by this
-	 * {@link SessionRepository}.
-	 *
+	 *??{@link SessionRepository}???????????{@link Session}
 	 * <p>
 	 * This allows optimizations and customizations in how the {@link Session} is
 	 * persisted. For example, the implementation returned might keep track of the changes
@@ -41,7 +39,8 @@ public interface SessionRepository<S extends Session> {
 
 	/**
 	 * Ensures the {@link Session} created by
-	 * {@link org.springframework.session.SessionRepository#createSession()} is saved.
+	 * {@link org.lego.session.SessionRepository#createSession()} is saved.
+	 * ???????
 	 *
 	 * <p>
 	 * Some implementations may choose to save as the {@link Session} is updated by
@@ -53,8 +52,7 @@ public interface SessionRepository<S extends Session> {
 	void save(S session);
 
 	/**
-	 * Gets the {@link Session} by the {@link Session#getId()} or null if no
-	 * {@link Session} is found.
+	 * ??{@link Session#getId()}??{@link Session}?????{@link Session}???null
 	 * @param id the {@link org.springframework.session.Session#getId()} to lookup
 	 * @return the {@link Session} by the {@link Session#getId()} or null if no
 	 * {@link Session} is found.
@@ -62,6 +60,7 @@ public interface SessionRepository<S extends Session> {
 	S findById(String id);
 
 	/**
+	 * ??{@link Session#getId()}??{@link Session}?????{@link Session}???null
 	 * Deletes the {@link Session} with the given {@link Session#getId()} or does nothing
 	 * if the {@link Session} is not found.
 	 * @param id the {@link org.springframework.session.Session#getId()} to delete
